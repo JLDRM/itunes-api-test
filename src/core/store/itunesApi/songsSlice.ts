@@ -35,6 +35,5 @@ export const songsSlice = createSlice({
 });
 
 export const { requested, succeed, failed } = songsSlice.actions;
-export type songsTypes = 'songs/requested' | 'songs/succeed' | 'songs/failed';
 
 export default songsSlice.reducer;

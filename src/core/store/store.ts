@@ -1,4 +1,5 @@
 import { configureStore, Action, ThunkAction } from '@reduxjs/toolkit';
+import thunkMiddleware from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 
 import rootSaga from '../sagas/rootSaga';
@@ -12,7 +13,7 @@ export const store = configureStore({
     counter: counterReducer,
     songs: songsReducer,
   },
-  middleware: [sagaMiddleware],
+  middleware: [thunkMiddleware, sagaMiddleware],
 });
 
 sagaMiddleware.run(rootSaga);
