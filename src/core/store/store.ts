@@ -1,31 +1,22 @@
-import { configureStore, Action, ThunkAction } from '@reduxjs/toolkit';
-import thunkMiddleware from 'redux-thunk';
+import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 
 import rootSaga from '../sagas/rootSaga';
-import counterReducer from './counter/counterSlice';
 import songsReducer from './itunesApi/songsSlice';
+import collectionsReducer from './itunesApi/collectionsSlice';
+import favouritesReducer from './itunesApi/favouritesSlice';
 
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
     songs: songsReducer,
+    collections: collectionsReducer,
+    favourites: favouritesReducer,
   },
-  middleware: [thunkMiddleware, sagaMiddleware],
+  middleware: [sagaMiddleware],
 });
 
 sagaMiddleware.run(rootSaga);
 
 export type RootState = ReturnType<typeof store.getState>;
-
-/* Use this type as a return type on the thunks implementations */
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
->;
-
-

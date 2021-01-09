@@ -1,13 +1,9 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
-import Home from "../../views/home/Home.view";
-import ReduxInfo from "../../views/redux/ReduxInfo.view";
-import ArtistDetailRouting from "./ArtistDetailRouting";
+import Navbar from '../layout/Navbar';
+import Home from '../../views/home/Home.view';
+import Collections from '../../views/collections/Collections.view';
 
 // Since routes are regular React components, they
 // may be rendered anywhere in the app, including in
@@ -19,22 +15,21 @@ import ArtistDetailRouting from "./ArtistDetailRouting";
 // any other React app.
 
 function AppRouter() {
-
   return (
     <Router>
+      <Navbar />
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
 
-        <Route path="/redux">
-          <ReduxInfo />
+        <Route exact path="/collections">
+          <Collections />
         </Route>
 
-        <Route path="/artist-detail">
-          <ArtistDetailRouting />
+        <Route path="*">
+          <Redirect to="/" />
         </Route>
-
       </Switch>
     </Router>
   );

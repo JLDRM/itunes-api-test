@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/include-media.scss';
+
+.IonSearchBar {
+  margin: #{getSpacingByBaseSpacing(1)} 0px;
+  width: 100%;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    bottom: 0;
+    width: 15px;
+    background: url('../../assets/search.svg') center / contain no-repeat;
+  }
+
+  input {
+    border: none;
+
+    @include media('>=tablet') {
+      min-width: 300px;
+    }
+
+    &[type='text' i] {
+      padding: #{getSpacingByBaseSpacing(1)};
+    }
+  }
+}

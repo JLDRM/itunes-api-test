@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.Container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10vw;
+  width: 100%;
+  max-width: 950px;
+  box-sizing: border-box;
+
+  &.viewContainer {
+    margin-top: getSpacingByBaseSpacing(2);
+    margin-bottom: getSpacingByBaseSpacing(2);
+  }
+}

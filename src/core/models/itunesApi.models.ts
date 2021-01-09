@@ -15,10 +15,10 @@ export type Kind =
 
 export interface ItuneSearchResponse {
   resultCount: number;
-  results: ItunesResults[];
+  results: ItunesResult[];
 }
 
-export interface ItunesResults {
+export interface ItunesResult {
   /* The name of the object returned by the search request.
   track, collection, artist
   For example: track. */
@@ -67,6 +67,8 @@ export interface ItunesResults {
   artworkUrl30: string;
   artworkUrl60: string;
   artworkUrl100: string;
+  /* Custom property added under mutation within itunesApi.service */
+  artworkUrl300: string;
 
   collectionPrice: number;
   trackPrice: number;

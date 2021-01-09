@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.Card {
+  &.track {
+    background-color: $primary-color;
+  }
+
+  &.collection {
+    background-color: $secondary-color;
+  }
+
+  .collection-img-container {
+    overflow: hidden;
+    img {
+      width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .description-container {
+    box-shadow: 0 -5px 5px -5px #333;
+  }
+
+  .track-name {
+    padding: getSpacingByBaseSpacing(2);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    b {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .collection-name {
+    padding: getSpacingByBaseSpacing(2);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    p {
+      margin: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .like-widget {
+    padding: getSpacingByBaseSpacing(2);
+
+    svg {
+      cursor: pointer;
+    }
+  }
+}
