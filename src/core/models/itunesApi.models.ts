@@ -19,55 +19,75 @@ export interface ItuneSearchResponse {
 }
 
 export interface ItunesResult {
-  /* The name of the object returned by the search request.
-  track, collection, artist
-  For example: track. */
+  /**
+  * The name of the object returned by the search request.
+  * @type {track, collection, artist}
+  * For example: track.
+  */
   wrapperType: string;
 
-  /* The kind of content returned by the search request.
-  book, album, coached-audio, feature-movie, interactive-booklet, music-video, pdf podcast, podcast-episode, software-package, song, tv-episode, artist
-  For example: song. */
+  /**
+  * The kind of content returned by the search request.
+  * @type {book, album, coached-audio, feature-movie, interactive-booklet, music-video, pdf podcast, podcast-episode, software-package, song, tv-episode, artist}
+  *  For example: song.
+  */
   kind: Kind;
   artistId: number;
   collectionId: number;
   trackId: number;
 
-  /* The name of the artist returned by the search request.
-  For example: “Jack Johnson”. */
+  /**
+   * The name of the artist returned by the search request.
+   * For example: “Jack Johnson”
+   *  */
   artistName: string;
 
-  /* The name of the album, TV season, audiobook, and so on returned by the search request.
-  For example: “In Between Dreams”. */
+  /**
+  * The name of the album, TV season, audiobook, and so on returned by the search request.;
+  * For example: “In Between Dreams”.
+  */
   collectionName: string;
 
-  /* The name of the track, song, video, TV episode, and so on returned by the search request.
-  For example: “Banana Pancakes”. */
+  /**
+   * The name of the track, song, video, TV episode, and so on returned by the search request.   
+   * For example: “Banana Pancakes”.
+  */
   trackName: string;
 
-  /* The name of the album, TV season, audiobook, and so on returned by the search request, with objectionable words *’d out.
-  Note: Artist names are never censored.
-  For example: “S**t Happens”. */
+  /**
+   * The name of the album, TV season, audiobook, and so on returned by the search request, with objectionable words *’d out.   
+   * Note: Artist names are never censored.   
+   * For example: “S ** t Happens”.
+  */
   trackCensoredName: string;
   collectionCensoredName: string;
 
-  /* A URL for the content associated with the returned media type. You can click the URL to view the content in the iTunes Store.
-  For example: “http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?i=68615807&id=68615813&s=143462”. */
+  /**
+   * A URL for the content associated with the returned media type.You can click the URL to view the content in the iTunes Store.   
+   * For example: “http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?i=68615807&id=68615813&s=143462”.
+  */
   artistViewUrl: string;
   collectionViewUrl: string;
   trackViewUrl: string;
 
-  /* A URL referencing the 30-second preview file for the content associated with the returned media type. .
-  Only when media type is track
-  For example: “http:// a392.itunes.apple.com/jp/r10/ Music/y2005/m06/d03/h05/s05.zdzqlufu.p.m4p”. */
+  /**
+   * A URL referencing the 30 - second preview file for the content associated with the returned media type.   
+   * Only when media type is track.   
+   * For example:   http://a392.itunes.apple.com/jp/r10/Music/y2005/m06/d03/h05/s05.zdzqlufu.p.m4p.
+  */
   previewUrl: string;
 
-  /* A URL for the artwork associated with the returned media type, sized to 100×100 pixels or 60×60 pixels.
-  Only when artwork is available
-  For example: “http://a1.itunes.apple.com/jp/r10/Music/y2005/m06/d03/h05/s05.oazjtxkw.100×100-75.jpg”. */
+  /**
+   * A URL for the artwork associated with the returned media type, sized to 100×100 pixels or 60×60 pixels.
+   * Only when artwork is available
+   *  For example: “http://a1.itunes.apple.com/jp/r10/Music/y2005/m06/d03/h05/s05.oazjtxkw.100×100-75.jpg”.
+  */
   artworkUrl30: string;
   artworkUrl60: string;
   artworkUrl100: string;
-  /* Custom property added under mutation within itunesApi.service */
+  /**
+   * Custom property added under mutation within itunesApi.service.
+  */
   artworkUrl300: string;
 
   collectionPrice: number;
@@ -80,9 +100,11 @@ export interface ItunesResult {
   trackCount: number;
   trackNumber: number;
 
-  /* The returned track’s time in milliseconds.
-  Only when media type is track
-  For example: 207679 */
+  /**
+   * The returned track’s time in milliseconds.   
+   * Only when media type is track   
+   * For example: 207679
+  */
   trackTimeMillis: number;
 
   country: string;

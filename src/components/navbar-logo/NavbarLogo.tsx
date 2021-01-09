@@ -5,6 +5,10 @@ import './NavbarLogo.scss';
 import logo from '../../assets/logo.svg';
 
 export interface NavbarLogoProps {
+  /**
+   * Discrimitanor between Home and Collections views
+   * Required
+   */
   pathname: string;
   width?: string;
 }

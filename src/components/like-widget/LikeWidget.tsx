@@ -12,6 +12,10 @@ export interface LikeWidgetProps {
    *  @type {'track' | 'collection'}
    */
   type: 'track' | 'collection';
+  /**
+   * Pass the dicriminator Id between trackID or collectionID depending the type. Required
+   *  @type {ItunesResult.trackId | 'ItunesResult.collectionId'}
+   */
   cardId: number;
 }
 
@@ -23,6 +27,14 @@ const LikeWidget = (props: LikeWidgetProps) => {
 
   const [isSongFav, setSongFav] = useState(false);
   const [isCollectionFav, setCollectionFav] = useState(false);
+
+  useEffect(() => {
+    if (type === 'track') {
+      setSongFav(favouritesSongsIds.includes(cardId));
+    } else {
+      setCollectionFav(favouritesCollectionsIds.includes(cardId));
+    }
+  }, [type, cardId, favouritesCollectionsIds, favouritesSongsIds]);
 
   function handleLikeWidgetClick() {
     if (type === 'track' && isSongFav) {
@@ -37,14 +49,6 @@ const LikeWidget = (props: LikeWidgetProps) => {
       return;
     }
   }
-
-  useEffect(() => {
-    if (type === 'track') {
-      setSongFav(favouritesSongsIds.includes(cardId));
-    } else {
-      setCollectionFav(favouritesCollectionsIds.includes(cardId));
-    }
-  }, [type, cardId, favouritesCollectionsIds, favouritesSongsIds]);
 
   return (
     <div className="LikeWidget">

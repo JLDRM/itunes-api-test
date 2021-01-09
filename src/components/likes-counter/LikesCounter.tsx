@@ -5,6 +5,10 @@ import { RootState } from '../../core/store/store';
 import './LikesCounter.scss';
 
 export interface LikesCounterProps {
+  /**
+   * Discrimitanor between Home and Collections views
+   * Required
+   */
   pathname: string;
 }
 

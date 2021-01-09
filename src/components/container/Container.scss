@@ -5,9 +5,9 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 10vw;
+  padding: 0 $horizontal-padding;
   width: 100%;
-  max-width: 950px;
+  max-width: $max-width;
   box-sizing: border-box;
 
   &.viewContainer {

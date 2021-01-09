@@ -1,10 +1,10 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import './Card.scss';
 import { ItunesResult } from '../../core/models/itunesApi.models';
 import Grid from '../grid/Grid';
 import LikeWidget from '../like-widget/LikeWidget';
+import './Card.scss';
 
 export interface CardProps {
   /**
